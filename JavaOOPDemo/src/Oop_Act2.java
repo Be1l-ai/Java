@@ -1,5 +1,3 @@
-import java.lang.invoke.StringConcatFactory;
-
 public class Oop_Act2 {
     String make;
     String model;
