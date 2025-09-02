@@ -28,7 +28,7 @@ public class Queue {
             System.out.println("Queue is empty");
         } else {
             int removed = queue[front];
-            queue[front] = 0; // optional: just to clear the slot
+            queue[front] = 0;
             front++;
             System.out.println("Dequeued: " + removed);
             if (front > rear) {
@@ -62,7 +62,6 @@ public class Queue {
         }
     }
 
-    // UI menu for Queue
     public void ui() {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -93,7 +92,7 @@ public class Queue {
                     show();
                     break;
                 case "4":
-                boolean isFull = IsFull();
+                    boolean isFull = IsFull();
                     if (isFull == true){
                         System.out.println("Queue is full");
                     } else {
