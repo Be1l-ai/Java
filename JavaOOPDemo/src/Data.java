@@ -14,12 +14,12 @@ public class Data {
         }
     }
 
-    public int pop(int value) {
+    public void pop() {
         if (IsEmpty()) {
             System.out.println("Stack underflow");
-            return -1;
         } else {
-            return stack[top--];
+            int removed = stack[top--];
+            System.out.println("Popped: " + removed);
         }
     }
 
@@ -83,13 +83,12 @@ public class Data {
                 case "1":
                     System.out.print("Enter a number to push: ");
                     int value = scan.nextInt();
-                    scan.nextLine(); // clear buffer
+                    scan.nextLine();
                     push(value);
                     printStack();
                     break;
                 case "2":
-                    pop(top);
-                    System.out.println("Top value successfully popped");
+                    pop();
                     printStack();
                     break;
                 case "3":
@@ -121,7 +120,7 @@ public class Data {
                 case "0":
                     System.out.println("Goodbye");
                     scan.close();
-                    return; // exit the method
+                    return;
                 default:
                     System.out.println("Invalid option");
                     break;
