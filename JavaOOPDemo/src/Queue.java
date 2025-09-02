@@ -31,6 +31,10 @@ public class Queue {
             queue[front] = 0; // optional: just to clear the slot
             front++;
             System.out.println("Dequeued: " + removed);
+            if (front > rear) {
+                front = 0;
+                rear = -1;
+            }
         }
     }
 
@@ -48,7 +52,7 @@ public class Queue {
 
     public void show() {
         if (IsEmpty()) {
-            System.out.println("Queue is empty");
+            System.out.println(" ");
         } else {
             System.out.print("Queue elements: ");
             for (int i = front; i <= rear; i++) {
@@ -80,11 +84,21 @@ public class Queue {
                     show();
                     break;
                 case "3":
-                    IsEmpty();
+                    boolean isEmpty = IsEmpty();
+                    if (isEmpty == true) {
+                        System.out.println("Queue is empty");
+                    } else {
+                        System.out.println("Queue is not empty");
+                    } 
                     show();
                     break;
                 case "4":
-                    IsFull();
+                boolean isFull = IsFull();
+                    if (isFull == true){
+                        System.out.println("Queue is full");
+                    } else {
+                        System.out.println("Queue is not full");
+                    } 
                     show();
                     break;
                 case "5":
